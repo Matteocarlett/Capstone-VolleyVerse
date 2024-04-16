@@ -20,3 +20,27 @@ body {
     height: 300px;
     object-fit: cover;
 }
+
+.facebook {
+    width: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+.instragram {
+    width: 20.5%;
+    text-decoration: none;
+    color:black;
+}
+.facebook2 {
+    width: 32%;
+    margin-right: 0.5rem;
+}
+
+.instragram2 {
+    width: 16%;
+    margin-right: 0.5rem;
+}
+.volleyLogo{
+    width:50%
+}

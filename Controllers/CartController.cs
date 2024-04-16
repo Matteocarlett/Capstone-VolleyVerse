@@ -8,7 +8,7 @@ namespace VolleyVerse.Controllers
 {
     public class CartController : Controller
     {
-        Model1 db = new Model1(); 
+        Model1 db = new Model1();
 
         public ActionResult Index()
         {
@@ -25,6 +25,8 @@ namespace VolleyVerse.Controllers
 
             return View(new List<Shop>());
         }
+
+
 
         public ActionResult AddToCart(int id)
         {

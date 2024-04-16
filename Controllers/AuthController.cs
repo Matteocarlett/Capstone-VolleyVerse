@@ -39,7 +39,7 @@ namespace Volley.Controllers
             {
                 HttpCookie customCookie = new HttpCookie("UserIDCookie");
                 customCookie.Value = loggedUser.user_id.ToString();
-                customCookie.Expires = DateTime.Now.AddDays(1); 
+                customCookie.Expires = DateTime.Now.AddDays(2); 
 
                 Response.Cookies.Add(customCookie);
 
@@ -94,7 +94,16 @@ namespace Volley.Controllers
         {
             FormsAuthentication.SignOut();
             TempData["LogoutSuccess"] = true;
+
+            if (Request.Cookies["UserIdCookie"] != null)
+            {
+                HttpCookie cookie = Request.Cookies["UserIdCookie"];
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(cookie);
+            }
+
             return RedirectToAction("Index", "Home");
         }
+
     }
 }

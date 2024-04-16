@@ -26,7 +26,7 @@
                     <li>@Html.ActionLink("Notizie", "News", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Calendario", "Calendario", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Squadre", "Squadre", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Contatti", "Contatti", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
+                    <li>@Html.ActionLink("Contatti", "Index", "Contatti", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Shop", "Index", "Shop", new { area = "" }, new { @class = "nav-link title" })</li>
                     @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Shop"))
                     {
