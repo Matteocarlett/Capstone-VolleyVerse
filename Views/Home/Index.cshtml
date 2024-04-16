@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/css/Home.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<div class="content">
+    <img class="vCec" src="~/Content/img/v.cecinaPhoto.jpg" alt="Immagine" />
+</div>
+@if (TempData["LogoutSuccess"] != null && (bool)TempData["LogoutSuccess"])
+{
+    <div class="alert alert-success mt-3" role="alert">
+        Logout effettuato con successo
+    </div>
+}
+
+<div id="overlay">
+    <img class="fipav" src="https://www.federvolley.it/sites/default/files/news/immagini/LOGO%20AZZURRO%20def.jpg" />
+    <img class="coni me-4" src="https://www.coni.it/images/CONI_Positivo4.jpg" />
+    <img class="scuolaVolley" src="https://www.scuolapallavolo.it/wp-content/uploads/2023/02/certificazione-di-qualita-2024.png" />
+    <img class="logo m3-2" src="~/Content/img/logo-cecina_1.jpeg" />
+    <p class="title">VOLLEY CECINA</p>
+    <img class="baia ms-4" src="https://www.campeggievillaggi.management/Upload/Images/Gallery/b7t9x8i7l8d7m7l0m7o0s8b6d__baia-marinaio.jpg" />
+    <img class="comune ms-3" src="https://scontent.fpsa1-1.fna.fbcdn.net/v/t39.30808-6/274281080_326953459464076_3815201088366488012_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=WgC1GpaZR_AAb6X4B7p&_nc_ht=scontent.fpsa1-1.fna&oh=00_AfA--3z3_GkfpiVDowmykyH4YLTQf0w8jc4J8Ou8Zndcaw&oe=661DDE2E" />
+    <img class="conad ms-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosMVx2MulkVA1UnqtrpRkVZH56uULBUE7ROigk97K&s" />
+    <img class="crv ms-3" src="https://www.softhrod.com/wp-content/uploads/portfolio-crv.png" />
+</div>
+<div>
+    <div class="d-flex justify-content-center">
+        <h2 class="fw-bold fs-2 m-4">NOI SIAMO <span class="title">VOLLEY CECINA</span></h2>
+    </div>
+    <div class="noiSiamo fs-5">
+        <p class="fw-light">Il <span class="fw-normal">Volley Cecina</span>, una realtà sportiva che palpita di passione e impegno, è un'esperienza coinvolgente per grandi e piccini. </p>
+        <p class="fw-light">Il <span class="fw-normal">Palazzetto dell Sport</span> di Cecina è il fulcro di questa passione, un luogo dove il suono del pallone che rimbalza e l'energia dei tifosi si fondono in un'atmosfera unica. </p>
+        <p class="fw-light">Le <span class="fw-normal">Palestre</span> adiacenti al palazzetto offrono lo spazio ideale per coltivare la passione per lo sport fin dalla più tenera età. Con le sue squadre impegnate in divisioni di Serie C, il Volley Cecina rappresenta il cuore pulsante dello sport locale, un punto di riferimento per gli amanti della pallavolo in tutta la regione. </p>
+        <p class="fw-light">Che tu sia un giocatore, un genitore o un tifoso, il Volley Cecina ti accoglie nella sua famiglia sportiva, pronta a condividere vittorie e momenti indimenticabili. Benvenuti nel mondo della pallavolo, benvenuti nel Volley Cecina.</p>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <h2 class="fw-bold fs-2 m-4 title">ULTIME NOTIZE</h2>
+</div>
+<div id="carouselExampleControls" class="carousel slide carosello" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <img src="https://media.paginemediche.it/benessere/sport-e-tempo-libero/pallavolo-e-beach-volley/5871-pallavolo-e-beach-volley-1200-675.jpg" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <img src="https://sport.quotidiano.net/image-service/version/c:M2U4MTFmMDUtNTRkNy00:NDU4YjI4/wilfriedo-leon-schiacciatore-della-sir-susa-vim-perugia-capolista-di-superlega.webp?f=16%3A9&q=1&w=1560" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <img src="https://d26itsb5vlqdeq.cloudfront.net//image/E87F8608-9A38-263D-27CC2E2AFEE75724" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <img src="https://www.primotemposport.com/wp-content/uploads/2021/07/come-vestirsi-per-giocare-a-beach-volley_primotempo.jpg" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <img src="https://p.turbosquid.com/ts-thumb/ye/B4SSgt/qUwG0VvP/1/jpg/1530899270/600x600/fit_q87/37cc2b3c1f14a8ef3f969eea7627edd63f73c575/1.jpg" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <img src="https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11-1024x614.jpg" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Testo della card 6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="d-flex justify-content-center">
+    <h2 class="fw-bold fs-2 m-4 title">STAGIONE 2023-24</h2>
+</div>
+<div class="d-flex justify-content-center">
+    <p> DA INSERIRE DELLE CARDS, COLLEGATE ALLE SQUADRE (esempio: serie C maschile. click e porta sul calendario della serie C maschile. card vicina: volley femminile under 18. click, e porta su dettagli team u18 femminile</p>
+</div>
+
+<div class="d-flex justify-content-center">
+    <h2 class="fw-bold fs-2 m-4 title">LE NOSTRE SQUADRE</h2>
+</div>
+<div class="d-flex justify-content-center">
+    <p> DA INSERIRE DELLE CARDS, COLLEGATE ALLE SQUADRE (esempio: serie C maschile. click e porta alla vista SQUADRA della serie C maschile. card vicina: volley femminile under 18. click, e porta su dettagli team u18 femminile</p>
+</div>
+
+
+
+
+
+
+<!-- Comandi JS -->
+<script>
+    //funzione per far sparire foto
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            let scrollTop = $(window).scrollTop();
+            let opacity = 1 - (scrollTop / 400);
+
+            $(".vCec").css("opacity", opacity);
+
+            if (scrollTop > 200) {
+                $("#overlay").css("opacity", "1");
+            } else {
+                $("#overlay").css("opacity", "0");
+            }
+        });
+        //funzione per banner logout
+        setTimeout(function () {
+            $(".alert").fadeOut();
+        }, 3000);
+    });
+</script>
+
+

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Shop";
+}
+
+<link href="~/Content/css/Shop.css" rel="stylesheet" />
+
+<div class="container">
+    <h2>Volley</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="vista col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="@item.item_photo" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.item_name</h5>
+                        <p class="card-text">@item.item_description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <form id="addToCartForm" method="post" action="@Url.Action("AddToCart", "Cart")">
+                                    <input type="hidden" name="id" value="@item.purchase_id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Aggiungi al carrello</button>
+                                </form>
+                            </div>
+
+                            <small class="text-muted">@item.item_price €</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

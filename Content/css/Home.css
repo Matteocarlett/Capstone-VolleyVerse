@@ -1,0 +1,92 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+body {
+    font-family: "Oswald", sans-serif;
+}
+
+
+.content {
+    position: relative;
+    margin-top: 50px; 
+}
+
+.vCec {
+    width: 100%; 
+    transition: opacity 0.5s; 
+}
+
+.logo{
+    width:8%;
+}
+.fipav{
+    width:8%;
+}
+.coni{
+    width:7%;
+}
+.scuolaVolley{
+    width:5%;
+}
+.baia {
+    width: 6%;
+}
+.comune {
+    width: 5%;
+}
+.conad {
+    width: 7%;
+}
+.crv {
+    width: 10%;
+}
+.title {
+    border-top: 2px solid red;
+    border-bottom: 2px solid blue;
+    margin:0
+}
+
+.carosello {
+    margin:auto;
+    width: 70%
+}
+
+.card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+}
+
+#overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-color: white;
+}
+
+.noiSiamo {
+    width: 60%;
+    margin: auto;
+}
+
+.containerTest{
+    width:80%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+

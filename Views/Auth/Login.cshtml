@@ -1,0 +1,33 @@
+﻿@model VolleyVerse.Models.Utenti
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-group">
+    @Html.LabelFor(m => m.email, "Email", new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+</div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.password, "Password", new { @class = "control-label" })
+        @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Accedi</button>
+}
+
+@if (TempData["ErrorLogin"] != null && (bool)TempData["ErrorLogin"])
+{
+    <div class="alert alert-danger mt-3" role="alert">
+        Mail o Password non validi
+    </div>
+}
