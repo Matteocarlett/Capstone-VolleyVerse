@@ -33,7 +33,7 @@ namespace Volley.Controllers
             if (loggedUser.role_id == 2) 
             {
                 FormsAuthentication.SetAuthCookie(loggedUser.user_id.ToString(), true);
-                return RedirectToAction("AdminPage", "Utenti");
+                return RedirectToAction("Index", "Home");
             }
             else if (loggedUser.role_id == 1) 
             {

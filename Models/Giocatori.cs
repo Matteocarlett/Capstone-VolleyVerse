@@ -31,6 +31,8 @@ namespace VolleyVerse.Models
 
         public int Numero { get; set; }
 
+        public string photo { get; set; }
+
         public virtual Squadra Squadra { get; set; }
     }
 }

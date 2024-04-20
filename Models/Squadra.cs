@@ -25,6 +25,8 @@ namespace VolleyVerse.Models
 
         public int coach_id { get; set; }
 
+        public string photo { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Calendario> Calendario { get; set; }
 

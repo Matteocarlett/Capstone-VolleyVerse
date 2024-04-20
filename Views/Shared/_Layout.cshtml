@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Notizie", "News", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Calendario", "Calendario", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Squadre", "Squadre", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
+                    <li>@Html.ActionLink("Squadre", "Index", "Squadre", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Contatti", "Index", "Contatti", new { area = "" }, new { @class = "nav-link title" })</li>
                     <li>@Html.ActionLink("Shop", "Index", "Shop", new { area = "" }, new { @class = "nav-link title" })</li>
                     @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Shop"))
@@ -55,7 +55,8 @@
     <div>
         @RenderBody()
         <hr />
-        <footer class="d-flex justify-content-center">
+    <footer class="bg-light text-center text-lg-start">
+        <div class="container p-4">
             <p>
                 &copy; @DateTime.Now.Year - Palazzetto dello Sport Ester ed Astrid Frontera - Via Fucini 1 - 57023 Cecina (Li)
                 C.F 01096660491 - Cod. Fipav 10 049 0079
@@ -64,7 +65,8 @@
                 volley.cecina@fipavbassotirreno.it -- volleycecina@gmail.com
                 Volleycecina@pec.it
             </p>
-        </footer>
+        </div>
+    </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

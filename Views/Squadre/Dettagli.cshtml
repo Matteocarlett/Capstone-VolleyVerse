@@ -1,0 +1,48 @@
+﻿@model VolleyVerse.Models.Squadra
+<link href="~/Content/css/Squadre.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Dettagli Squadra";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-center m-4">
+        <h2>@Model.team_name</h2>
+    </div>
+
+    <div class="row">
+        @foreach (var giocatore in Model.Giocatori)
+        {
+            <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="@Url.Content(giocatore.photo)" alt="@giocatore.Nome @giocatore.Cognome">
+                    <div class="card-body">
+                        <h5 class="card-title">@giocatore.Nome @giocatore.Cognome</h5>
+                        <p class="card-text">Numero: @giocatore.Numero</p>
+                        <p class="card-text">Altezza: @giocatore.Altezza m</p>
+                        <p class="card-text">Data di nascita: @giocatore.Data_di_nascita.ToShortDateString()</p>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a href="@Url.Action("Modifica", "Squadre", new { id = giocatore.player_id })">Modifica</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a href="@Url.Action("AggiungiGiocatore", "Squadre")" class="btn btn-primary">Aggiungi Giocatore</a>
+    }
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.card-img-top').hover(function () {
+                $(this).css('transform', 'scale(1.2)');
+            }, function () {
+                $(this).css('transform', 'scale(1)');
+            });
+        });
+    </script>
+}
