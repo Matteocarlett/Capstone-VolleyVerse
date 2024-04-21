@@ -4,14 +4,35 @@
     ViewBag.Title = "Elenco Squadre";
 }
 
-<h2>Elenco Squadre</h2>
+<div class="spazio">
+    <div class="container">
+        <h2 class="d-flex justify-content-center m-3"><span class="title fs-1">Le Nostre Squadre</span></h2>
 
-@foreach (var squadra in Model)
-{
-    <div>
-        <h3>@squadra.team_name</h3>
-        <a href="@Url.Action("Dettagli", "Squadre", new { id = squadra.team_id })">
-            <img src="@squadra.photo" alt="@squadra.team_name" width="200" height="150" />
-        </a>
+        <div class=" row">
+            <div class="col-md-8">
+
+                @foreach (var squadra in Model.Where(s => s.team_id == 1 || s.team_id == 4 || s.team_id == 6))
+                {
+                    <div>
+                        <h4 class="mb-2 mt-4 fs-3">@squadra.team_name</h4>
+                        <a href="@Url.Action("Dettagli", "Squadre", new { id = squadra.team_id })">
+                            <img class="mb-5" src="@squadra.photo" alt="@squadra.team_name" style="width: 100%; max-width: 300px; height: auto;" />
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4">
+
+                @foreach (var squadra in Model.Where(s => s.team_id == 3 || s.team_id == 5 || s.team_id == 7))
+                {
+                    <div>
+                        <h4 class="mb-2 mt-4 fs-3">@squadra.team_name</h4>
+                        <a href="@Url.Action("Dettagli", "Squadre", new { id = squadra.team_id })">
+                            <img class="mb-5" src="@squadra.photo" alt="@squadra.team_name" style="width: 100%; max-width: 300px; height: auto;" />
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
-}
+</div>

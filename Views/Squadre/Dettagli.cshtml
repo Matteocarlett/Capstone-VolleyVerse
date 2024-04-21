@@ -2,31 +2,56 @@
 <link href="~/Content/css/Squadre.css" rel="stylesheet" />
 @{
     ViewBag.Title = "Dettagli Squadra";
+    int count = 0; 
 }
 
 <div class="container">
     <div class="d-flex justify-content-center m-4">
-        <h2>@Model.team_name</h2>
+        <h1 class="title">@Model.team_name</h1>
     </div>
+
+    @if (Model.Coach != null)
+    {
+        <div class="mb-4">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img class="card-img-top img-fluid p-2" src="@Url.Content(Model.Coach.photo)" alt="Foto del Coach @Model.Coach.Nome @Model.Coach.Cognome" style="height: 400px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@Model.Coach.Nome @Model.Coach.Cognome</h5>
+                        <p class="card-text">Allenatore</p>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a href="@Url.Action("ModificaCoach", "Squadre", new { id = Model.Coach.coach_id })" class="mt-auto btn btn-primary">Modifica Coach</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }       
 
     <div class="row">
         @foreach (var giocatore in Model.Giocatori)
         {
-            <div class="col-sm-3">
-                <div class="card">
-                    <img class="card-img-top" src="@Url.Content(giocatore.photo)" alt="@giocatore.Nome @giocatore.Cognome">
-                    <div class="card-body">
+            if (count >= 12) 
+            {
+                break; 
+            }
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top img-fluid p-2" src="@Url.Content(giocatore.photo)" alt="@giocatore.Nome @giocatore.Cognome" style="height: 400px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">@giocatore.Nome @giocatore.Cognome</h5>
                         <p class="card-text">Numero: @giocatore.Numero</p>
                         <p class="card-text">Altezza: @giocatore.Altezza m</p>
                         <p class="card-text">Data di nascita: @giocatore.Data_di_nascita.ToShortDateString()</p>
                         @if (User.IsInRole("Admin"))
                         {
-                            <a href="@Url.Action("Modifica", "Squadre", new { id = giocatore.player_id })">Modifica</a>
+                            <a href="@Url.Action("Modifica", "Squadre", new { id = giocatore.player_id })" class="mt-auto btn btn-primary">Modifica</a>
                         }
                     </div>
                 </div>
             </div>
+            count++; 
         }
     </div>
     @if (User.IsInRole("Admin"))
@@ -39,7 +64,7 @@
     <script>
         $(document).ready(function () {
             $('.card-img-top').hover(function () {
-                $(this).css('transform', 'scale(1.2)');
+                $(this).css('transform', 'scale(1.1)');
             }, function () {
                 $(this).css('transform', 'scale(1)');
             });
