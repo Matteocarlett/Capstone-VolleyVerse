@@ -19,8 +19,19 @@ namespace VolleyVerse.Models
 
         public TimeSpan match_time { get; set; }
 
-        public bool home { get; set; }
+        public int? away_team_id { get; set; }
+
+        public int? home_team_score { get; set; }
+
+        public int? away_team_score { get; set; }
+
+        [StringLength(255)]
+        public string location { get; set; }
 
         public virtual Squadra Squadra { get; set; }
+
+        public virtual Squadra Squadra1 { get; set; }
+
+        public virtual Squadra Squadra2 { get; set; }
     }
 }

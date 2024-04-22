@@ -68,8 +68,3 @@ body {
         opacity: 1;
         z-index: -1;
     }
-
-    .spazio > * {
-        position: relative;
-        z-index: 1;
-    }

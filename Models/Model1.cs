@@ -27,6 +27,10 @@ namespace VolleyVerse.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Calendario>()
+                .Property(e => e.location)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Coach>()
                 .HasMany(e => e.Squadra)
                 .WithRequired(e => e.Coach)
@@ -53,7 +57,19 @@ namespace VolleyVerse.Models
 
             modelBuilder.Entity<Squadra>()
                 .HasMany(e => e.Calendario)
-                .WithRequired(e => e.Squadra)
+                .WithOptional(e => e.Squadra)
+                .HasForeignKey(e => e.away_team_id);
+
+            modelBuilder.Entity<Squadra>()
+                .HasMany(e => e.Calendario1)
+                .WithRequired(e => e.Squadra1)
+                .HasForeignKey(e => e.team_id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Squadra>()
+                .HasMany(e => e.Calendario2)
+                .WithRequired(e => e.Squadra2)
+                .HasForeignKey(e => e.team_id)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Squadra>()

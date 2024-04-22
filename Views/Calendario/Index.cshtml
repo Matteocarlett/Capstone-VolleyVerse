@@ -1,0 +1,102 @@
+﻿@model IEnumerable<VolleyVerse.Models.Calendario>
+<link href="~/Content/css/Shop.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Calendario Partite";
+}
+    <div class="container">
+        <h2 class="d-flex justify-content-center m-3"><span class="title fs-1 text-light">Calendario Partite</span></h2>
+
+        <form class="d-flex justify-content-center mb-3" method="get" action="@Url.Action("Index")">
+            <select name="teamId">
+                <option value="">Seleziona una Squadra</option>
+                @foreach (var squadra in ViewBag.TeamId as SelectList)
+                {
+                    <option value="@squadra.Value">@squadra.Text</option>
+                }
+            </select>
+            <button type="submit">Mostra Calendario</button>
+        </form>
+
+        @if (Model.Any())
+        {
+            foreach (var partita in Model)
+            {
+                <div class="match-card">
+                    <div class="match-info">
+                        <div class="match-date">@partita.match_date.ToString("dd MMMM yyyy") - @partita.match_time.ToString(@"hh\:mm")</div>
+                    </div>
+                    <div class="teams">
+                        <div class="team">
+                            <img class="team-logo" src="@partita.Squadra1.logo_url" alt="@partita.Squadra1.team_name" />
+                            <span class="team-name">@partita.Squadra1.team_name</span>
+                        </div>
+                        <div class="vs">vs</div>
+                        <div class="team">
+                            <span class="team-name">@partita.Squadra.team_name</span>
+                            <img class="team-logo" src="@partita.Squadra.logo_url" alt="@partita.Squadra.team_name" />
+                        </div>
+                    </div>
+                    <div class="match-location">@partita.location</div>
+                </div>
+            }
+        }
+    </div>
+
+
+<style>
+
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11.jpg');
+        opacity: 1;
+        z-index: -1;
+    }
+
+    .match-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .match-info, .match-location {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .teams {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+    }
+
+    .team-name {
+        margin: 0 10px;
+    }
+
+    .team-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .vs {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 20px;
+    }
+
+</style>
+
