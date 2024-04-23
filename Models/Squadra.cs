@@ -15,6 +15,7 @@ namespace VolleyVerse.Models
             Calendario = new HashSet<Calendario>();
             Calendario1 = new HashSet<Calendario>();
             Calendario2 = new HashSet<Calendario>();
+            Classifica = new HashSet<Classifica>();
             Giocatori = new HashSet<Giocatori>();
         }
 
@@ -39,6 +40,9 @@ namespace VolleyVerse.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Calendario> Calendario2 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Classifica> Classifica { get; set; }
 
         public virtual Coach Coach { get; set; }
 

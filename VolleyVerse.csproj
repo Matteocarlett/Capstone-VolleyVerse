@@ -159,6 +159,7 @@
     <Compile Include="Models\Abbonati.cs" />
     <Compile Include="Models\Calendario.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Classifica.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Contatti.cs" />
     <Compile Include="Models\Giocatori.cs" />
@@ -229,10 +230,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Auth\Register.cshtml" />
-    <Content Include="Views\Home\News.cshtml" />
-    <Content Include="Views\Home\Calendario.cshtml" />
-    <Content Include="Views\Home\Squadre.cshtml" />
-    <Content Include="Views\Home\Contatti.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Contatti\Index.cshtml" />
@@ -243,6 +240,7 @@
     <Content Include="Views\Squadre\Modifica.cshtml" />
     <Content Include="Views\Squadre\AggiungiGiocatore.cshtml" />
     <Content Include="Views\Calendario\Index.cshtml" />
+    <Content Include="Views\Calendario\Classifica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

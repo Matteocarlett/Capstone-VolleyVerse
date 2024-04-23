@@ -4,44 +4,50 @@
 @{
     ViewBag.Title = "Calendario Partite";
 }
-    <div class="container">
-        <h2 class="d-flex justify-content-center m-3"><span class="title fs-1 text-light">Calendario Partite</span></h2>
+<div class="container">
+    <h2 class="d-flex justify-content-center m-3"><span class="title fs-1 text-light">Calendario Partite</span></h2>
 
-        <form class="d-flex justify-content-center mb-3" method="get" action="@Url.Action("Index")">
-            <select name="teamId">
-                <option value="">Seleziona una Squadra</option>
-                @foreach (var squadra in ViewBag.TeamId as SelectList)
-                {
-                    <option value="@squadra.Value">@squadra.Text</option>
-                }
-            </select>
-            <button type="submit">Mostra Calendario</button>
-        </form>
-
-        @if (Model.Any())
-        {
-            foreach (var partita in Model)
+    <form class="d-flex justify-content-center mb-3" method="get" action="@Url.Action("Index")">
+         @if (ViewBag.SelectedTeamId != null)
+ {
+     <a href="@Url.Action("Classifica", "Calendario", new { teamId = ViewBag.SelectedTeamId })" class="btn btn-danger me-2">Classifica</a>
+ }
+        <select name="teamId">
+            <option value="">Seleziona una Squadra</option>
+            @foreach (var squadra in ViewBag.TeamId as SelectList)
             {
-                <div class="match-card">
-                    <div class="match-info">
-                        <div class="match-date">@partita.match_date.ToString("dd MMMM yyyy") - @partita.match_time.ToString(@"hh\:mm")</div>
-                    </div>
-                    <div class="teams">
-                        <div class="team">
-                            <img class="team-logo" src="@partita.Squadra1.logo_url" alt="@partita.Squadra1.team_name" />
-                            <span class="team-name">@partita.Squadra1.team_name</span>
-                        </div>
-                        <div class="vs">vs</div>
-                        <div class="team">
-                            <span class="team-name">@partita.Squadra.team_name</span>
-                            <img class="team-logo" src="@partita.Squadra.logo_url" alt="@partita.Squadra.team_name" />
-                        </div>
-                    </div>
-                    <div class="match-location">@partita.location</div>
-                </div>
+                <option value="@squadra.Value">@squadra.Text</option>
             }
+        </select>
+        <button class="btn btn-primary ms-2">Mostra Calendario</button>
+    </form>
+
+   
+
+    @if (Model.Any())
+    {
+        foreach (var partita in Model)
+        {
+            <div class="match-card">
+                <div class="match-info">
+                    <div class="match-date">@partita.match_date.ToString("dd MMMM yyyy") - @partita.match_time.ToString(@"hh\:mm")</div>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img class="team-logo" src="@partita.Squadra1.logo_url" alt="@partita.Squadra1.team_name" />
+                        <span class="team-name">@partita.Squadra1.team_name</span>
+                    </div>
+                    <div class="vs">vs</div>
+                    <div class="team">
+                        <span class="team-name">@partita.Squadra.team_name</span>
+                        <img class="team-logo" src="@partita.Squadra.logo_url" alt="@partita.Squadra.team_name" />
+                    </div>
+                </div>
+                <div class="match-location">@partita.location</div>
+            </div>
         }
-    </div>
+    }
+</div>
 
 
 <style>
