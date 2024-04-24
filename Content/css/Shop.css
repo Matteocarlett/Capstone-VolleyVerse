@@ -68,3 +68,8 @@ body {
         opacity: 1;
         z-index: -1;
     }
+
+#card-element {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

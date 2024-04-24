@@ -1,38 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using VolleyVerse.Models;
 
 namespace VolleyVerse.Controllers
 {
     public class HomeController : Controller
     {
+        private Model1 db = new Model1();
+
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult News()
-        {
-            return View();
-        }
-
-        public ActionResult Calendario()
-        {
-            return View();
-        }
-        public ActionResult Squadre()
-        {
-            return View();
-        }
-        public ActionResult Contatti()
-        {
-            return View();
-        }
-        public ActionResult Shop()
-        {
-            return View();
+            var squadreCecina = db.Squadra.Where(s => s.team_name.Contains("Cecina")).ToList();
+            var latestNews = db.Notizie.OrderByDescending(n => n.date_published).Take(3).ToList();
+            ViewBag.LatestNews = latestNews;
+            return View(squadreCecina);
         }
     }
 }

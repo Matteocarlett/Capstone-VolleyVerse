@@ -1,0 +1,85 @@
+﻿@model IEnumerable<VolleyVerse.Models.Notizie>
+<link href="~/Content/css/Shop.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@{
+    ViewBag.Title = "Tutte le Notizie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="d-flex justify-content-center mt-3 mb-4"><span class="title fs-1 text-light">Notizie</span></h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var news in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100" src="@Url.Content(news.image_url ?? "~/Content/Images/default.png")" alt="News Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@news.title</h5>
+                        <p class="card-text fw-light">@news.content</p>
+                        <small class="text-muted">@news.date_published.ToShortDateString()</small>
+                        <button class="btn btn-link card-expand-link">Leggi ancora...</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<style>
+
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11.jpg');
+        opacity: 1;
+        z-index: -1;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limita il testo a 3 linee */
+        -webkit-box-orient: vertical;
+        max-height: 4.5em; /* Assicurati che 4.5em corrispondano all'altezza di circa 3 linee di testo */
+        transition: max-height 0.5s ease;
+    }
+
+        .card-text.expanded {
+            -webkit-line-clamp: none;
+            max-height: 100%; /* Remove maximum height when expanded */
+            display: block; /* Remove box styles to show all content */
+        }
+
+
+    .card-expand-link {
+        margin-top: auto;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('.card-expand-link').click(function () {
+            var cardText = $(this).siblings('.card-text'); // Usa siblings per trovare .card-text nella stessa card
+            cardText.toggleClass('expanded');
+            if (cardText.hasClass('expanded')) {
+                $(this).text('Leggi meno...');
+            } else {
+                $(this).text('Leggi ancora...');
+            }
+        });
+    });
+</script>
+
+
+
+
+
+

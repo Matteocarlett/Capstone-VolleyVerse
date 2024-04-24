@@ -13,12 +13,18 @@
             <p><strong>Indirizzo:</strong> <span class="fw-light">@Model.address</span></p>
             <p><strong>Telefono:</strong> <span class="fw-light"> @Model.phone_number</span></p>
             <p><strong>Email:</strong> <span class="fw-light"> @Model.email</span></p>
-            <h4>Info Biglietti:</h4>
-            <p class="fw-light">Informazioni sui biglietti saranno disponibili presto.</p>
+            <h4>Info Iscrizioni:</h4>
+            <ul class="fw-light">
+                <li>Under 14 Maschile/Femminile: €150 per stagione</li>
+                <li>Under 18 Maschile/Femminile: €180 per stagione</li>
+                <li>Serie C Maschile/Femminile: €200 per stagione</li>
+            </ul>
             <h4>Dove Trovarci:</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.3229944846953!2d10.521640753054294!3d43.307497541681265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d5fdf90cc16d41%3A0x3f7ba28bab3fa0c8!2sA.S.D.%20Volley%20Cecina!5e0!3m2!1sit!2sit!4v1713298005726!5m2!1sit!2sit" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <div class="responsive-iframe-container w-75">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.3229944846953!2d10.521640753054294!3d43.307497541681265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d5fdf90cc16d41%3A0x3f7ba28bab3fa0c8!2sA.S.D.%20Volley%20Cecina!5e0!3m2!1sit!2sit!4v1713298005726!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
+
         <div class="col-md-4">
 
             <img src="https://volleybox.net/media/upload/teams/big_1693577869JU3ta.png" class=" volleyLogo img-responsive" alt="Immagine 1" />
@@ -37,3 +43,21 @@
 
     </div>
 </div>
+
+<style>
+    .responsive-iframe-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%; 
+        margin-bottom: 20px;
+    }
+
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+</style>
