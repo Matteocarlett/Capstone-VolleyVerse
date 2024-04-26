@@ -12,65 +12,79 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
+    <div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
 
-            @Html.ActionLink("VOLLEY CECINA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand title pe-5" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Attiva/Disattiva spostamento" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Notizie", "Index", "News", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Calendario", "Index", "Calendario", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Squadre", "Index", "Squadre", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Contatti", "Index", "Contatti", new { area = "" }, new { @class = "nav-link title" })</li>
-                    <li>@Html.ActionLink("Shop", "Index", "Shop", new { area = "" }, new { @class = "nav-link title" })</li>
-                    @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Shop"))
-                    {
-                        <li><a href="@Url.Action("Index", "Cart")" class="nav-link title"><i class="fas fa-shopping-cart"></i> Carrello</a></li>
-                    }
-                </ul>
-                <div>
-                    @if (!User.Identity.IsAuthenticated)
-                    {
+                @Html.ActionLink("VOLLEY CECINA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand title pe-5" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Attiva/Disattiva spostamento" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link title" })</li>
+                        <li>@Html.ActionLink("Notizie", "Index", "News", new { area = "" }, new { @class = "nav-link title" })</li>
+                        <li>@Html.ActionLink("Calendario", "Index", "Calendario", new { area = "" }, new { @class = "nav-link title" })</li>
+                        <li>@Html.ActionLink("Squadre", "Index", "Squadre", new { area = "" }, new { @class = "nav-link title" })</li>
+                        <li>@Html.ActionLink("Contatti", "Index", "Contatti", new { area = "" }, new { @class = "nav-link title" })</li>
+                        <li>@Html.ActionLink("Shop", "Index", "Shop", new { area = "" }, new { @class = "nav-link title" })</li>
+                        @if (Request.Cookies["UserIDCookie"] != null)
+                        {
+                            if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Shop"))
+                            {
+                                <li><a href="@Url.Action("Index", "Cart")" class="nav-link title"><i class="fas fa-shopping-cart"></i> Carrello</a></li>
+                            }
+                        }
+                        </ul>
+                    <div>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
 
-                        <a href="@Url.Action("Login", "Auth", new { area = "" })" class="btn btn-outline-light text-custom py-2 ">Accedi</a>
-                        <a href="@Url.Action("Register", "Auth", new { area = "" })" class="btn btn-outline-light text-custom py-2 ">Registrati</a>
-                    }
-                    else
-                    {
+                            <a href="@Url.Action("Login", "Auth", new { area = "" })" class="btn btn-outline-light text-custom py-2 ">Accedi</a>
+                            <a href="@Url.Action("Register", "Auth", new { area = "" })" class="btn btn-outline-light text-custom py-2 ">Registrati</a>
+                        }
+                        else
+                        {
 
-                        <form action="@Url.Action("Logout", "Auth")" method="post" style="display: inline;">
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-success">Disconnetti</button>
-                        </form>
-                    }
+                            <form action="@Url.Action("Logout", "Auth")" method="post" style="display: inline;">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-success">Disconnetti</button>
+                            </form>
+                        }
+                    </div>
                 </div>
             </div>
+        </nav>
+        <div class="body-class">
+            @RenderBody()
         </div>
-    </nav>
-    <div>
-        @RenderBody()
-        <hr />
-    <footer class="bg-light text-center text-lg-start">
-        <div class="container p-4">
-            <p>
-                &copy; @DateTime.Now.Year - Palazzetto dello Sport Ester ed Astrid Frontera - Via Fucini 1 - 57023 Cecina (Li)
-                C.F 01096660491 - Cod. Fipav 10 049 0079
 
-                Tel. 0586/631698 Cell. 3388127228 Fax 0586/1867442
-                volley.cecina@fipavbassotirreno.it -- volleycecina@gmail.com
-                Volleycecina@pec.it
-            </p>
-        </div>
-    </footer>
+
+        <hr />
+        <footer class="bg-light text-center text-lg-start">
+            <div class="container p-4">
+                <p>
+                    &copy; @DateTime.Now.Year - Palazzetto dello Sport Ester ed Astrid Frontera - Via Fucini 1 - 57023 Cecina (Li)
+                    C.F 01096660491 - Cod. Fipav 10 049 0079
+
+                    Tel. 0586/631698 Cell. 3388127228 Fax 0586/1867442
+                    volley.cecina@fipavbassotirreno.it -- volleycecina@gmail.com
+                    Volleycecina@pec.it
+                </p>
+            </div>
+        </footer>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
 </body>
 </html>
+
+<style>
+    .body-class{
+        min-height: 75vh !important;
+    }
+</style>

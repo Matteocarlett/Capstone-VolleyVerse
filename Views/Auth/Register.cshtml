@@ -4,48 +4,82 @@
     ViewBag.Title = "Register";
 }
 
-<h2>Crea un Account</h2>
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Crea un Account</h2>
 
-@using (Html.BeginForm("Register", "Auth", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+                    @using (Html.BeginForm("Register", "Auth", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Nome, new { @class = "control-label" })
-        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                        <div class="form-group row mt-3">
+
+                            @Html.LabelFor(m => m.Nome, new { @class = "col-sm-3 col-form-label" }) 
+                            <div class="col-sm-8">
+                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            @Html.LabelFor(m => m.Cognome, new { @class = "col-sm-3 col-form-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBoxFor(m => m.Cognome, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Cognome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 col-form-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            @Html.LabelFor(m => m.Password, "Password", new { @class = "col-sm-3 col-form-label" })
+                            <div class="col-sm-8">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3 d-flex align-items-center">
+                            @Html.LabelFor(m => m.ConfirmPassword, "Conferma Password", new { @class = "col-sm-3 col-form-label" })
+                            <div class="col-sm-8">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end mt-3">
+                            <button type="submit" class="btn btn-success">Registrati</button>
+                        </div>
+                    }
+
+                    @if (TempData["RegistrationSuccess"] != null && (bool)TempData["RegistrationSuccess"])
+                    {
+                        <div class="alert alert-success mt-3" role="alert">
+                            Registrazione effettuata con successo
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Cognome, new { @class = "control-label" })
-        @Html.TextBoxFor(m => m.Cognome, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Cognome, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword,"Conferma Password", new { @class = "control-label" })
-        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
-    </div>
-
-    <button type="submit" class="btn btn-primary">Registrati</button>
-}
-
-@if (TempData["RegistrationSuccess"] != null && (bool)TempData["RegistrationSuccess"])
-{
-    <div class="alert alert-success mt-3" role="alert">
-        Registrazione effettuata con successo
-    </div>
-}
+<style>
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11.jpg');
+        opacity: 1;
+        z-index: -1;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+    }
+</style>

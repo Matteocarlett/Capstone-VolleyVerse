@@ -172,7 +172,6 @@
     <Compile Include="Models\Squadra.cs" />
     <Compile Include="Models\StripeHelper.cs" />
     <Compile Include="Models\Utenti.cs" />
-    <Compile Include="Models\Vendite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -238,11 +237,11 @@
     <Content Include="Views\Payment\ProcessPayment.cshtml" />
     <Content Include="Views\Squadre\Index.cshtml" />
     <Content Include="Views\Squadre\Dettagli.cshtml" />
-    <Content Include="Views\Squadre\Modifica.cshtml" />
-    <Content Include="Views\Squadre\AggiungiGiocatore.cshtml" />
     <Content Include="Views\Calendario\Index.cshtml" />
     <Content Include="Views\Calendario\Classifica.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Shop\Create.cshtml" />
+    <Content Include="Views\Shop\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

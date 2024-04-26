@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="d-flex justify-content-center m-4">
-        <h1 class="title">@Model.team_name</h1>
+        <h1 class="title text-light">@Model.team_name</h1>
     </div>
 
     @if (Model.Coach != null)
@@ -17,33 +17,29 @@
                 <div class="card h-100">
                     <img class="card-img-top img-fluid p-2" src="@Url.Content(Model.Coach.photo)" alt="Foto del Coach @Model.Coach.Nome @Model.Coach.Cognome" style="height: 400px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">@Model.Coach.Nome @Model.Coach.Cognome</h5>
+                        <h5 class="card-title"><span class="title">@Model.Coach.Nome @Model.Coach.Cognome</span></h5>
                         <p class="card-text">Allenatore</p>
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <a href="@Url.Action("ModificaCoach", "Squadre", new { id = Model.Coach.coach_id })" class="mt-auto btn btn-primary">Modifica Coach</a>
-                        }
                     </div>
                 </div>
             </div>
         </div>
-    }       
+    }
 
     <div class="row">
         @foreach (var giocatore in Model.Giocatori)
         {
-            if (count >= 12) 
+            if (count >= 12)
             {
-                break; 
+                break;
             }
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100">
                     <img class="card-img-top img-fluid p-2" src="@Url.Content(giocatore.photo)" alt="@giocatore.Nome @giocatore.Cognome" style="height: 400px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">@giocatore.Nome @giocatore.Cognome</h5>
-                        <p class="card-text">Numero: @giocatore.Numero</p>
-                        <p class="card-text">Altezza: @giocatore.Altezza m</p>
-                        <p class="card-text">Data di nascita: @giocatore.Data_di_nascita.ToShortDateString()</p>
+                        <h5 class="card-title mb-3"> <span class="title">@giocatore.Nome @giocatore.Cognome </span></h5>
+                        <p class="card-text fw-bold">Numero: <span class="fw-light">@giocatore.Numero</span></p>
+                        <p class="card-text fw-bold">Altezza: <span class="fw-light">@giocatore.Altezza m </span></p>
+                        <p class="card-text fw-bold">Data di nascita: <span class="fw-light">@giocatore.Data_di_nascita.ToShortDateString()</span></p>
                         @if (User.IsInRole("Admin"))
                         {
                             <a href="@Url.Action("Modifica", "Squadre", new { id = giocatore.player_id })" class="mt-auto btn btn-primary">Modifica</a>
@@ -51,13 +47,9 @@
                     </div>
                 </div>
             </div>
-            count++; 
+            count++;
         }
     </div>
-    @if (User.IsInRole("Admin"))
-    {
-        <a href="@Url.Action("AggiungiGiocatore", "Squadre")" class="btn btn-primary">Aggiungi Giocatore</a>
-    }
 </div>
 
 @section scripts {
@@ -71,3 +63,12 @@
         });
     </script>
 }
+
+
+<style>
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11.jpg');
+        opacity: 1;
+        z-index: -1;
+    }
+</style>

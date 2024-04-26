@@ -24,7 +24,6 @@ namespace VolleyVerse.Models
         public virtual DbSet<Shop> Shop { get; set; }
         public virtual DbSet<Squadra> Squadra { get; set; }
         public virtual DbSet<Utenti> Utenti { get; set; }
-        public virtual DbSet<Vendite> Vendite { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

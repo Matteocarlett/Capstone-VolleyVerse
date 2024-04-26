@@ -11,3 +11,7 @@ body {
     border-bottom: 2px solid blue;
     margin: 0
 }
+
+.card{
+    cursor:pointer;
+}

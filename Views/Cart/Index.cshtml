@@ -2,29 +2,32 @@
 <link href="~/Content/css/Shop.css" rel="stylesheet" />
 
 <div class="container mt-3">
+    <h2 class="d-flex justify-content-center fs-1 text-light mb-3"> <span class="title">Articoli nel carrello</span></h2>
     <div class="card">
+
         <div class="card-body">
-            <h2 class="card-title">Articoli nel carrello</h2>
+
             @if (Model.Count > 0)
             {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Nome Prodotto</th>
-                            <th>Prezzo</th>
-                            <th>Descrizione</th>
-                            <th>Foto</th>
-                            <th>Rimuovi</th>
+                            <th class="fs-5">Foto</th>
+                            <th class="fs-5">Prodotto</th>
+                            <th class="fs-5">Descrizione</th>
+                            <th class="fs-5">Prezzo</th>
+                            <th class="fs-5">Rimuovi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.item_name</td>
-                                <td>@item.item_price</td>
-                                <td>@item.item_description</td>
                                 <td><img src="@item.item_photo" alt="Foto Prodotto" style="width: 100px; height: 100px;" /></td>
+                                <td>@item.item_name</td>
+                                <td class="fw-light">@item.item_description</td>
+                                <td class="text-muted">@item.item_price </td>
+
                                 <td>
                                     @using (Html.BeginForm("RimuoviDalCarrello", "Cart", new { id = item.purchase_id }, FormMethod.Post))
                                     {
@@ -39,7 +42,7 @@
 
                 <div class="row">
                     <div class="col-md-12 d-flex align-items-center justify-content-end">
-                        <p class="card-text me-2 mb-0">Totale: @Model.Sum(item => item.item_price)</p>
+                        <p class="card-text me-2 mb-0 fs-4">Totale: @Model.Sum(item => item.item_price) €</p>
                         @using (Html.BeginForm("Checkout", "Payment", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
@@ -55,3 +58,11 @@
         </div>
     </div>
 </div>
+
+<style>
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.modenavolley.it/wp/wp-content/uploads/2022/09/PALAZZETTO-11.jpg');
+        opacity: 1;
+        z-index: -1;
+    }
+</style>

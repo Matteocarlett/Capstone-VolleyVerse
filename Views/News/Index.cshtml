@@ -45,16 +45,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3; /* Limita il testo a 3 linee */
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        max-height: 4.5em; /* Assicurati che 4.5em corrispondano all'altezza di circa 3 linee di testo */
+        max-height: 4.5em; 
         transition: max-height 0.5s ease;
     }
 
         .card-text.expanded {
             -webkit-line-clamp: none;
-            max-height: 100%; /* Remove maximum height when expanded */
-            display: block; /* Remove box styles to show all content */
+            max-height: 100%; 
+            display: block; 
         }
 
 
@@ -67,7 +67,7 @@
 <script>
     $(document).ready(function () {
         $('.card-expand-link').click(function () {
-            var cardText = $(this).siblings('.card-text'); // Usa siblings per trovare .card-text nella stessa card
+            var cardText = $(this).siblings('.card-text'); 
             cardText.toggleClass('expanded');
             if (cardText.hasClass('expanded')) {
                 $(this).text('Leggi meno...');

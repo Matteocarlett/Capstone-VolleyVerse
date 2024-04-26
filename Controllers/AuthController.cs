@@ -32,6 +32,11 @@ namespace Volley.Controllers
 
             if (loggedUser.role_id == 2) 
             {
+                HttpCookie customCookie = new HttpCookie("AdminIDCookie");
+                customCookie.Value = loggedUser.user_id.ToString();
+                customCookie.Expires = DateTime.Now.AddDays(2);
+
+                Response.Cookies.Add(customCookie);
                 FormsAuthentication.SetAuthCookie(loggedUser.user_id.ToString(), true);
                 return RedirectToAction("Index", "Home");
             }
@@ -97,13 +102,21 @@ namespace Volley.Controllers
 
             if (Request.Cookies["UserIdCookie"] != null)
             {
-                HttpCookie cookie = Request.Cookies["UserIdCookie"];
-                cookie.Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(cookie);
+                HttpCookie cookieUser = Request.Cookies["UserIdCookie"];
+                cookieUser.Expires = DateTime.Now.AddDays(-1); 
+                Response.Cookies.Add(cookieUser);
+            }
+
+            if (Request.Cookies["AdminIdCookie"] != null)
+            {
+                HttpCookie cookieAdmin = Request.Cookies["AdminIdCookie"];
+                cookieAdmin.Expires = DateTime.Now.AddDays(-1); 
+                Response.Cookies.Add(cookieAdmin);
             }
 
             return RedirectToAction("Index", "Home");
         }
+
 
     }
 }
