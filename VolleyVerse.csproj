@@ -192,9 +192,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\Home.css" />
+    <Content Include="Content\css\navbar.css" />
     <Content Include="Content\css\Shop.css" />
     <Content Include="Content\css\Squadre.css" />
+    <Content Include="Content\img\cecina.png" />
     <Content Include="Content\img\logo-cecina_1.jpeg" />
+    <Content Include="Content\img\pallaVolley.jpg" />
     <Content Include="Content\img\v.cecinaPhoto.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -242,6 +245,8 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Shop\Create.cshtml" />
     <Content Include="Views\Shop\Edit.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

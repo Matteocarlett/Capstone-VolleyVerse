@@ -8,6 +8,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="~/Content/img/pallaVolley.jpg" type="image/webp">
+    <link href="~/Content/css/navbar.css" rel="stylesheet" />
 </head>
 
 
@@ -47,10 +49,11 @@
                         else
                         {
 
-                            <form action="@Url.Action("Logout", "Auth")" method="post" style="display: inline;">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-success">Disconnetti</button>
-                            </form>
+                    <form action="@Url.Action("Logout", "Auth")" method="post" style="display: inline;">
+                        @Html.AntiForgeryToken()
+                        <img src="@Url.Content("~/Content/img/pallaVolley.jpg")" alt="Volleyball" style="height: 40px; margin-right: 10px;">
+                        <button type="submit" class="btn btn-outline-light">Disconnetti</button>
+                    </form>
                         }
                     </div>
                 </div>

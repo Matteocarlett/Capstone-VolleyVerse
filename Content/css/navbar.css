@@ -1,0 +1,7 @@
+﻿@media (max-width: 768px) {
+    a.nav-link {
+        border-top: none;
+        border-bottom: none;
+        margin: 0
+    }
+}

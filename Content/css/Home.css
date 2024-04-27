@@ -47,48 +47,58 @@ body {
     margin:0
 }
 
-.carosello {
-    margin:auto;
-    width: 70%
+@media (max-width: 768px) {
+    .titleIn {
+        font-size: 1rem; 
+    }
+    .navbar {
+        z-index: 2 !important;
+    }
 }
 
-.card-img-top {
-    height: 200px; 
-    object-fit: cover; 
-}
 
-#overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    position: fixed;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 50px;
-    color: black;
-    opacity: 0;
-    transition: opacity 0.5s;
-    background-color: white;
-    z-index:1 !important;
-    margin-top:0.6rem;
-}
+    .carosello {
+        margin: auto;
+        width: 70%
+    }
 
-.noiSiamo {
-    width: 60%;
-    margin: auto;
-}
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
 
-.containerTest{
-    width:80%;
-}
+    #overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 50px;
+        color: black;
+        opacity: 0;
+        transition: opacity 0.5s;
+        background-color: white;
+        z-index: 1 !important;
+        margin-top: 0.6rem;
+    }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
+    .noiSiamo {
+        width: 60%;
+        margin: auto;
+    }
+
+    .containerTest {
+        width: 80%;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
 

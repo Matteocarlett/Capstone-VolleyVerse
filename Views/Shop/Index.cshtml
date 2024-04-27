@@ -5,7 +5,13 @@
 }
 
 <div class="container mt-3">
-    <h2 class="text-light d-flex justify-content-center mt-3 mb-5 fs-1"><span class="title">Shop</span></h2>
+    <h2 class="text-light d-flex justify-content-center mt-3 mb-3 fs-1"><span class="title">Shop</span></h2>
+    @if (Request.Cookies["AdminIDCookie"] != null)
+    {
+        <div class="text-center mb-4">
+            <a href="@Url.Action("Create", "Shop")" class="btn btn-success">Aggiungi Nuovo Articolo</a>
+        </div>
+    }
     <div class="row d-flex align-items-stretch">
         @foreach (var item in Model)
         {
@@ -39,12 +45,6 @@
             </div>
         }
     </div>
-    @if (Request.Cookies["AdminIDCookie"] != null)
-    {
-        <div class="d-flex justify-content-center mt-4">
-            <a href="@Url.Action("Create", "Shop")" class="btn btn-lg btn-success">Aggiungi Nuovo Articolo</a>
-        </div>
-    }
 </div>
 
 
