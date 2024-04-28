@@ -12,7 +12,6 @@ namespace VolleyVerse.Models
         {
         }
 
-        public virtual DbSet<Abbonati> Abbonati { get; set; }
         public virtual DbSet<Calendario> Calendario { get; set; }
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Classifica> Classifica { get; set; }
@@ -80,11 +79,6 @@ namespace VolleyVerse.Models
             modelBuilder.Entity<Squadra>()
                 .HasMany(e => e.Giocatori)
                 .WithRequired(e => e.Squadra)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Utenti>()
-                .HasMany(e => e.Abbonati)
-                .WithRequired(e => e.Utenti)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Utenti>()
