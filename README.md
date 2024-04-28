@@ -18,6 +18,12 @@ https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/7e72cabe-
 
 https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/6ceb22d3-d235-446a-9a04-83077590cab4
 
+https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/33f0c87e-0f02-453e-8571-ad6a4eebeffe
 
+##INTERFACCIA ADMIN E FUNZIONALITA'
+
+LOGIN GIA' EFFETTUATO COME AMMINISTRATORE TRAMITE ACCEDI - Tutto gestito tramite Role_id e gestione dei Cookie.
+
+https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/b5cf716a-a2c4-4f51-843e-9d6004e139ae
 
 
