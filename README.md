@@ -1,5 +1,3 @@
-
-https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/1c192ca1-567d-4fde-890a-64f9100fc72f
 # PROGETTO CAPSTONE "volleyVerse"
 
 ##SCELTA DEL LAVORO:
