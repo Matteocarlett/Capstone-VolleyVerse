@@ -10,7 +10,7 @@ Ho sviluppato un'applicazione web basata sul modello MVC Framework. Questa inclu
 ## DATABASE 💻
 ![image](https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/990ae9c6-d7b2-48b6-aca4-8d09b7cdd1ca)
 
-##INTERFACCIA UTENTE E FUNZIONALITA' 👤
+## INTERFACCIA UTENTE E FUNZIONALITA' 👤
 
 https://github.com/Matteocarlett/Capstone-VolleyVerse/assets/147732277/7e72cabe-58fc-4c13-bcf9-8819b5c0d2f8
 
